@@ -2,49 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
-}
-
 body {
-  background-color: #030014;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* Efecto cristal */
-.glass {
-  background: rgba(15, 11, 41, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+/* Tarjetas */
+.clean-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.clean-card:hover {
+  border-color: #7e22ce;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* Texto gradiente */
-.text-gradient {
-  background: linear-gradient(to right, #00C2FF, #7000FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-/* ... mantén lo que ya tenías arriba ... */
-
-/* Animación para el carrusel infinito de logos */
+/* --- ANIMACIÓN MARQUEE ROBUSTA --- */
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 .animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-/* Fondo de gradiente sutil para el estilo Bento */
-.bento-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-}
-
-.bento-card:hover {
-  border-color: rgba(112, 0, 255, 0.3);
-  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  display: flex;
+  width: max-content; /* Fuerza a que sea largo */
+  animation: scroll 50s linear infinite; /* Un poco más lento para que sea elegante */
 }
